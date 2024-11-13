@@ -5,12 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Lab Room Temperatures</title>
 </head>
+
+<!-- 
+Refer to https://stackoverflow.com/questions/1201052/how-do-i-highlight-parts-of-an-imagemap-on-mouseover
+Code for how to add highlights to image maps
+Also used documentation: 
+https://projects.davidlynch.org/maphilight/docs/ 
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('.map').maphilight(
+        {
+            fill: true,
+            fillColor: '4e9eff',
+            fillOpacity: 0.2,
+            stroke: true,
+            strokeColor: '0000ff',
+            strokeOpacity: 1,
+            strokeWidth: 2.5,
+            fade: true,
+            alwaysOn: false,
+            neverOn: false,
+            groupBy: false,
+            wrapClass: true,
+            shadow: false,
+            shadowX: 0,
+            shadowY: 0,
+            shadowRadius: 6,
+            shadowColor: '000000',
+            shadowOpacity: 0.8,
+            shadowPosition: 'outside',
+            shadowFrom: false
+        }
+    );
+  });
+</script>
+
 <body>
     <h1>Link Lab Room Temperatures</h1>
     <div id="temperature-display">Click on a room to see its temperature</div>
+    <div style="height: 20px;"> </div>
     <script src="/static/scripts/main.js"></script>
-    <div id="map-container">
-        <img src="/static/images/link_lab.png" alt="Link Lab Map" usemap="#link-lab" id="link-lab-image">
+    <div id="map-container"> <!-- https://www.w3schools.com/html/html_images_imagemap.asp --> 
+        <img src="/static/images/link_lab.png" alt="Link Lab Map" usemap="#link-lab" id="link-lab-image" class="map">
         <map name="link-lab">
             <!-- Image Map Generated with help from http://www.image-map.net/ -->
             <area target="" alt="211 Olsson" title="211 Olsson" href="#" coords="976,289,801,161" shape="rect" onclick="showTemperature('211 Olsson')">
