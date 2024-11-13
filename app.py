@@ -13,27 +13,24 @@ password = os.getenv("PASSWORD")
 database = os.getenv("DATABASE")
 client = InfluxDBClient(host, port, username, password, database, ssl=True, verify_ssl=True)
 
-room_temps = {}
-result = client.query('SELECT LAST(value) FROM "Temperature_°C" GROUP BY "location_specific";')
-for k,v in result.items():
-    location = k[1]['location_specific']
-    for d in v:
-        temp = d.get("last")
-        room_temps[location] = temp
-
-print(room_temps)
-
-def get_room_temperatures():
-    return room_temps
+def get_room_temperature(room_name):
+    temp = None
+    result = client.query(f'SELECT value FROM "Temperature_°C" WHERE location_specific = \'{room_name}\' ORDER BY time DESC LIMIT 1;')
+    for k,v in result.items():
+        for d in v:
+            temp = d.get("value")
+    return {
+        room_name: temp
+    }
 
 @app.route('/')
 def index():
     return render_template('map.html')
 
-@app.route('/temperatures')
-def temperatures():
-    room_temperatures = get_room_temperatures()
-    return jsonify(room_temperatures)
+@app.route('/temperature/<room_name>')
+def temperature(room_name):
+    room_temperature = get_room_temperature(room_name=room_name)
+    return jsonify(room_temperature)
 
 if __name__ == '__main__':
     app.run(debug=True)
