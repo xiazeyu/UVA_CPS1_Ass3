@@ -1,3 +1,4 @@
+## Setup 
 Install dependencies with: 
 ```
 pip install -r requirements.txt
@@ -12,6 +13,7 @@ PASSWORD = ...
 DATABASE = ...
 ```
 
+## How to run the application
 We use Flask! 
 To run the website locally, use this command: 
 ```
