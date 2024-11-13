@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Lab Room Temperatures</title>
+</head>
+<body>
+    <h1>Link Lab Room Temperatures</h1>
+    <div id="temperature-display">Click on a room to see its temperature</div>
+    <script src="/static/scripts/main.js"></script>
+    <div id="map-container">
+        <img src="/static/images/link_lab.png" alt="Link Lab Map" usemap="#link-lab" id="link-lab-image">
+        <map name="link-lab">
+            <!-- Image Map Generated with help from http://www.image-map.net/ -->
+            <area target="" alt="211 Olsson" title="211 Olsson" href="#" coords="976,289,801,161" shape="rect" onclick="showTemperature('211 Olsson')">
+            <area target="" alt="201 Olsson" title="201 Olsson" href="#" coords="57,9,348,8,354,259,164,335,60,334" shape="poly" onclick="showTemperature('201 Olsson')">
+            <area target="" alt="203 Olsson" title="203 Olsson" href="#" coords="366,52,801,335" shape="rect" onclick="showTemperature('203 Olsson')">
+            <area target="" alt="204 Olsson" title="204 Olsson" href="#" coords="346,415,346,334,285,334,225,369,221,393,241,416" shape="poly" onclick="showTemperature('204 Olsson')">
+            <area target="" alt="208 Olsson" title="208 Olsson" href="#" coords="587,403,473,359" shape="rect" onclick="showTemperature('208 Olsson')">
+            <area target="" alt="217 Olsson" title="217 Olsson" href="#" coords="1073,201,1203,289" shape="rect" onclick="showTemperature('217 Olsson')">
+            <area target="" alt="218 Olsson" title="218 Olsson" href="#" coords="1073,362,1232,412" shape="rect" onclick="showTemperature('218 Olsson')">
+            <area target="" alt="221 Olsson" title="221 Olsson" href="#" coords="1474,197,1474,18,1198,14,1198,54,804,54,802,157,1076,160,1076,199" shape="poly" onclick="showTemperature('221 Olsson')">
+            <area target="" alt="225 Olsson" title="225 Olsson" href="#" coords="1289,201,1416,287" shape="rect" onclick="showTemperature('225 Olsson')">
+            <area target="" alt="227 Olsson" title="227 Olsson" href="#" coords="1416,199,1476,287" shape="rect" onclick="showTemperature('227 Olsson')">
+            <area target="" alt="240 Olsson" title="240 Olsson" href="#" coords="949,420,1381,419,1384,656,1201,656,1201,609,949,607" shape="poly" onclick="showTemperature('240 Olsson')">
+            <area target="" alt="241 Olsson" title="241 Olsson" href="#" coords="1384,415,1477,481" shape="rect" onclick="showTemperature('241 Olsson')">
+            <area target="" alt="243 Olsson" title="243 Olsson" href="#" coords="1384,485,1478,552" shape="rect" onclick="showTemperature('243 Olsson')">
+            <area target="" alt="245 Olsson" title="245 Olsson" href="#" coords="1385,555,1476,618" shape="rect" onclick="showTemperature('245 Olsson')">
+            <area target="" alt="247 Olsson" title="247 Olsson" href="#" coords="1386,626,1476,723" shape="rect" onclick="showTemperature('247 Olsson')">
+            <area target="" alt="249 Olsson" title="249 Olsson" href="#" coords="1294,723,1384,659" shape="rect" onclick="showTemperature('249 Olsson')">
+            <area target="" alt="251 Olsson" title="251 Olsson" href="#" coords="1197,721,1291,660" shape="rect" onclick="showTemperature('251 Olsson')">
+            <area target="" alt="253 Olsson" title="253 Olsson" href="#" coords="1118,686,1193,614" shape="rect" onclick="showTemperature('253 Olsson')">
+            <area target="" alt="255 Olsson" title="255 Olsson" href="#" coords="1041,685,1113,614" shape="rect" onclick="showTemperature('255 Olsson')">
+            <area target="" alt="256 Olsson" title="256 Olsson" href="#" coords="874,483,946,420" shape="rect" onclick="showTemperature('256 Olsson')">
+            <area target="" alt="257 Olsson" title="257 Olsson" href="#" coords="966,687,1037,613" shape="rect" onclick="showTemperature('257 Olsson')">
+            <area target="" alt="259 Olsson" title="259 Olsson" href="#" coords="889,686,961,617" shape="rect" onclick="showTemperature('259 Olsson')">
+            <area target="" alt="260 Olsson" title="260 Olsson" href="#" coords="875,491,943,575" shape="rect" onclick="showTemperature('260 Olsson')">
+            <area target="" alt="261 Olsson" title="261 Olsson" href="#" coords="809,687,885,614" shape="rect" onclick="showTemperature('261 Olsson')">
+            <area target="" alt="263 Olsson" title="263 Olsson" href="#" coords="732,686,805,616" shape="rect" onclick="showTemperature('263 Olsson')">
+            <area target="" alt="265 Olsson" title="265 Olsson" href="#" coords="655,685,728,614" shape="rect" onclick="showTemperature('265 Olsson')">
+            <area target="" alt="267 Olsson" title="267 Olsson" href="#" coords="577,686,650,616" shape="rect" onclick="showTemperature('267 Olsson')">
+            <area target="" alt="269 Olsson" title="269 Olsson" href="#" coords="501,687,575,613" shape="rect" onclick="showTemperature('269 Olsson')">
+            <area target="" alt="271 Olsson" title="271 Olsson" href="#" coords="424,686,496,614" shape="rect" onclick="showTemperature('271 Olsson')">
+            <area target="" alt="273 Olsson" title="273 Olsson" href="#" coords="344,687,421,616" shape="rect" onclick="showTemperature('273 Olsson')">
+            <area target="" alt="274 Olsson" title="274 Olsson" href="#" coords="302,423,371,495" shape="rect" onclick="showTemperature('274 Olsson')">
+            <area target="" alt="275 Olsson" title="275 Olsson" href="#" coords="257,723,341,644" shape="rect" onclick="showTemperature('275 Olsson')">
+            <area target="" alt="276 Olsson" title="276 Olsson" href="#" coords="142,640,144,500,375,498,377,416,580,416,581,610,340,610,340,640" shape="poly" onclick="showTemperature('276 Olsson')">
+            <area target="" alt="277 Olsson" title="277 Olsson" href="#" coords="180,723,255,645" shape="rect" onclick="showTemperature('277 Olsson')">
+            <area target="" alt="279 Olsson" title="279 Olsson" href="#" coords="61,723,179,649" shape="rect" onclick="showTemperature('279 Olsson')">
+            <area target="" alt="281  Olsson" title="281  Olsson" href="#" coords="60,645,140,576" shape="rect" onclick="showTemperature('281 Olsson')">
+            <area target="" alt="283 Olsson" title="283 Olsson" href="#" coords="60,573,141,499" shape="rect" onclick="showTemperature('283 Olsson')">
+            <area target="" alt="285  Olsson" title="285  Olsson" href="#" coords="65,424,182,492" shape="rect" onclick="showTemperature('285 Olsson')">
+            <area target="" alt="286 Olsson" title="286 Olsson" href="#" coords="239,427,299,492" shape="rect" onclick="showTemperature('286 Olsson')">
+            <area target="" alt="C200 Olsson" title="C200 Olsson" href="#" coords="64,336,157,415" shape="rect" onclick="showTemperature('C200 Olsson')">
+            <area target="" alt="C201 Olsson" title="C201 Olsson" href="#" coords="163,411,163,339,268,296,282,328" shape="poly" onclick="showTemperature('C201 Olsson')">
+            <area target="" alt="C210 Olsson" title="C210 Olsson" href="#" coords="599,361,867,405" shape="rect" onclick="showTemperature('C210 Olsson')">
+            <area target="" alt="C211 Olsson" title="C211 Olsson" href="#" coords="804,293,1018,331" shape="rect" onclick="showTemperature('C211 Olsson')">
+            <area target="" alt="C213 Olsson" title="C213 Olsson" href="#" coords="978,289,1072,163" shape="rect" onclick="showTemperature('C213 Olsson')">
+        </map>
+    </div>
+</body>
+</html>
